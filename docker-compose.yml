@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  nuxt:
+    build:
+      context: ./nuxt-app
+      args:
+        WORKDIR: $WORKDIR
+    command: npm run dev
+    volumes:
+      - ./nuxt-app:/$WORKDIR
+    ports:
+      - $FRONT_PORT:3000
